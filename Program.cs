@@ -1,6 +1,4 @@
-﻿using System
-
-namespace C_sharp_basics
+﻿namespace C_sharp_basics
 {
     internal class Program
     {
@@ -8,7 +6,7 @@ namespace C_sharp_basics
         {
             Console.WriteLine("Hello, World! These are my first steps with C# into .NET");
 
-            byte number;
+            byte number = 12;
             Console.WriteLine(number);
         }
     }
