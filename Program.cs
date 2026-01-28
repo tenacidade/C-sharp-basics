@@ -6,6 +6,8 @@
         {
             Console.WriteLine("Hello, World! These are my first steps with C# into .NET");
 
+            // Data types and variables
+
             var number = 12;
             var count = 29;
             var totalPrice = 20.95f;
@@ -19,6 +21,14 @@
             Console.WriteLine(firstName);
             Console.WriteLine(isWorking);
             Console.WriteLine();
+
+            Console.WriteLine("{0} {1}", byte.MinValue, byte.MaxValue); //this shows us the range of a byte
+            Console.WriteLine("{0} {1}", float.MinValue, float.MaxValue); //this show us the range of a float
+
+            const float Pi = 3.14f;
+            Console.WriteLine(Pi);
+
+
         }
     }
 }
