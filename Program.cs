@@ -28,7 +28,38 @@
             const float Pi = 3.14f;
             Console.WriteLine(Pi);
 
+            // Type conversion
 
+            byte b = 1;
+            int i = b; // implicit conversion from byte to int
+            Console.WriteLine(b);
+            Console.WriteLine(i);
+
+            int x = 1; 
+            //byte y = x; ... this won't compile because it's a narrowing conversion
+            byte y = (byte)x; // i'm saying to C# that this is a explicit conversion from int to byte
+
+            float f = 1.1f;
+            byte z = (byte)f; // explicit conversion from float to byte
+
+            string str = "1234";
+            int w = Convert.ToInt32(str); // converting string to int, can't use explicit conversion here, string and int are not compatible types;.
+
+            var myNumber = "2026";
+            Console.WriteLine(myNumber);
+            int myNumberConverted = Convert.ToInt32(myNumber);
+            Console.WriteLine(myNumberConverted);
+
+            int myBigNumber = 5000;
+
+            byte myByte = (byte)myBigNumber;
+            Console.WriteLine(myByte); //results to 136 because it looses a lot of when converting.
+
+            //What if I want to use Convert here instead using a explicit conversion?
+
+            int mySecondBigNumber = 10000;
+            byte mySecondByte = Convert.ToByte(mySecondBigNumber);
+            // Console.WriteLine(mySecondByte); //We'll get an unhandled exception.
         }
     }
 }
