@@ -35,7 +35,7 @@
             Console.WriteLine(b);
             Console.WriteLine(i);
 
-            int x = 1; 
+            int x = 1;
             //byte y = x; ... this won't compile because it's a narrowing conversion
             byte y = (byte)x; // i'm saying to C# that this is a explicit conversion from int to byte
 
@@ -57,9 +57,37 @@
 
             //What if I want to use Convert here instead using a explicit conversion?
 
-            int mySecondBigNumber = 10000;
-            byte mySecondByte = Convert.ToByte(mySecondBigNumber);
-            // Console.WriteLine(mySecondByte); //We'll get an unhandled exception.
+            //int mySecondBigNumber = 10000;
+            //byte mySecondByte = Convert.ToByte(mySecondBigNumber);
+            //Console.WriteLine(mySecondByte); //We'll get an unhandled exception.
+
+            //Dealing with undandled exceptions, preveting the application to crash:
+
+            try
+            {
+                int myThirdBigNumber = 10000;
+                byte myThirdByte = Convert.ToByte(myThirdBigNumber);
+                Console.WriteLine(myThirdByte);
+            }
+            catch (Exception)
+            {
+                {
+                    Console.WriteLine("The number can not be converted from int to byte");
+                }
+            }
+
+            try
+            {
+                string myString = "true";
+                bool myBoolean = Convert.ToBoolean(myString);
+                Console.WriteLine(myBoolean);
+            }
+            catch (Exception)
+            {
+                {
+                    Console.WriteLine("The string couldn't be converted to a boolean");
+                }
+            }
         }
     }
 }
