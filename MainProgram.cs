@@ -41,6 +41,18 @@ namespace C_sharp_basics
                 Year = 2020
             };
             showCorollaCar.ShowCar();
+
+            //array example 1
+            var numbers = new int[3] { 1, 2, 3 };
+            Console.WriteLine(numbers[1]); //prints the second position of the array (2)
+
+            //array example 2
+            var flags = new[] { "US", "UK", "FR", "DE" }; //type inferred array
+            Console.WriteLine(flags[3]);
+
+            //array example 3
+            var people = new[] { "Mosh", "Gab", "Rich" };
+            Console.WriteLine(people[0]);
         }
     }
 }
