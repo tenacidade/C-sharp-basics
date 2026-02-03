@@ -1,4 +1,5 @@
 ﻿using C_sharp_basics.Math; //importing the Math namespace to use the Calculator class
+using C_sharp_basics.Vehicle; //importing the Vehicle namespace to use the Car struct
 
 namespace C_sharp_basics
 {
@@ -30,10 +31,16 @@ namespace C_sharp_basics
             plainSum.SumPlainValues();
 
 
-            var addThreeValues = new Calculator(); //instantiating another Calculator object
+            var addThreeValues = new Calculator(); //instantiating another Calculator object in a 'better way'
             var threeValuesResult = addThreeValues.Add(40, 50, 60);
             Console.WriteLine("The sum of the three values, in a 'better' logic is equal to " + threeValuesResult);
 
+            var showCorollaCar = new Car { //instantiating the Car class from the Vehicles namespace
+                Make = "Toyota",
+                Model = "Corolla",
+                Year = 2020
+            };
+            showCorollaCar.ShowCar();
         }
     }
 }
