@@ -3,56 +3,40 @@ using C_sharp_basics.Vehicle; //importing the Vehicle namespace to use the Car s
 
 namespace C_sharp_basics
 {
-    public class  MainProgram
+    public class MainProgram
     {
         static void Main(string[] args)
         {
-            Person mosh = new Person(); //classic way to instantiate an object (not simplified)
-            mosh.FirstName = "Mosh";
-            mosh.LastName = "Hamedani";
-            mosh.Introduce();
+            //see the diference between value types and reference types:
+            var a = 10; //a is a value type (int);
+            var b = a; //b is a copy of a, they are two different variables in memory
+            b++; //incrementing b does not affect a, because they are two different variables in memory
+            Console.WriteLine(string.Format("a: {0}, b: {1}", a, b)); //a: 10, b: 11
+            var c = b++; //c is a copy of b, but b is incremented after the assignment, so c is 11 and b is 12
+            Console.WriteLine(string.Format("b: {0}, c: {1}", b, c)); //b: 12, c: 11
 
-            var rich = new Person(); //one more way to instantiate an object
-            rich.FirstName = "Richard";
-            rich.LastName = "Bleyer";
-            rich.Introduce();
+            var array1 = new int[3] { 1, 2, 3 }; //array1 is a reference type (array);
+            var array2 = array1; //array2 is a reference to the same array in memory as array1, they are not two different variables in memory
+            Console.WriteLine(array2[0]); //1
+            array2[0] = 0; //modifying array2 also modifies array1, because they are references to the same array in memory
+            Console.WriteLine(array1[0]); //0
 
-            var gab = new Person //another way to instantiate an object
-            {
-                FirstName = "Gabriel",
-                LastName = "Duarte"
-            }; 
-            gab.Introduce();
+            //have you ever heard of enums? Let's see how they work:
 
-            var plainSum = new Calculator(); //instantiating the Calculator class from the Math namespace
-            plainSum.x = 10;
-            plainSum.y = 20;
-            plainSum.z = 30;
-            plainSum.SumPlainValues();
+            var shippingMethod = ShippingMethod.Express; //using the ShippingMethod enum
+            Console.WriteLine((int)shippingMethod); //using casting to get the integer value of the enum (3 in this case)
+            //very useful when you want to store the enum value in a database for example: 
+            //you can store the integer value and then cast it back to the enum when you retrieve it from the database, see:
+            var methodId = 3; //imagine this value comes from a database
+            Console.WriteLine((ShippingMethod)methodId); //casting the integer value back to the enum
 
+        }
 
-            var addThreeValues = new Calculator(); //instantiating another Calculator object in a 'better way'
-            var threeValuesResult = addThreeValues.Add(40, 50, 60);
-            Console.WriteLine("The sum of the three values, in a 'better' logic is equal to " + threeValuesResult);
-
-            var showCorollaCar = new Car { //instantiating the Car class from the Vehicles namespace
-                Make = "Toyota",
-                Model = "Corolla",
-                Year = 2020
-            };
-            showCorollaCar.ShowCar();
-
-            //array example 1
-            var numbers = new int[3] { 1, 2, 3 };
-            Console.WriteLine(numbers[1]); //prints the second position of the array (2)
-
-            //array example 2
-            var flags = new[] { "US", "UK", "FR", "DE" }; //type inferred array
-            Console.WriteLine(flags[3]);
-
-            //array example 3
-            var people = new[] { "Mosh", "Gab", "Rich" };
-            Console.WriteLine(people[0]);
+        public enum ShippingMethod
+        {
+            RegularAirMail = 1,
+            RegisteredAirMail = 2,
+            Express = 3
         }
     }
 }
