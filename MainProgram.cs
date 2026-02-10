@@ -9,137 +9,211 @@ namespace C_sharp_basics
     {
         static void Main(string[] args)
         {
-            var number1 = 10;
-            if (number1 > 5)
-            {
-                Console.WriteLine("var number1 which equals to " + number1 + " is greater than 5");
-            }
-            else
-            {
-                Console.WriteLine("var number1 which equals to " + number1 + "is less than or equal to 5");
-            }
+            //var number1 = 10;
+            //if (number1 > 5)
+            //{
+            //    Console.WriteLine("var number1 which equals to " + number1 + " is greater than 5");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("var number1 which equals to " + number1 + "is less than or equal to 5");
+            //}
 
-            bool isRaining = true;
-            if (isRaining)
-            {
-                Console.WriteLine("It is raining outside. Don't forget to take an umbrella!");
-            }
-            else
-            {
-                Console.WriteLine("It is not raining outside. Enjoy your day!");
-            }
+            //bool isRaining = true;
+            //if (isRaining)
+            //{
+            //    Console.WriteLine("It is raining outside. Don't forget to take an umbrella!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("It is not raining outside. Enjoy your day!");
+            //}
 
-            bool isGolden = true;
-            float price;
-            if (isGolden)
-                price = 1000.50f;
-            else
-                price = 500.25f;
-            Console.WriteLine(price);
+            //bool isGolden = true;
+            //float price;
+            //if (isGolden)
+            //    price = 1000.50f;
+            //else
+            //    price = 500.25f;
+            //Console.WriteLine(price);
 
-            //using ternary operator to assign value to price2 based on the condition of isGolden
-            float price2 = isGolden ? 1000.50f : 500.25f;
-            Console.WriteLine(price2);
+            ////using ternary operator to assign value to price2 based on the condition of isGolden
+            //float price2 = isGolden ? 1000.50f : 500.25f;
+            //Console.WriteLine(price2);
 
-            //Now we'll use Season enum here to play with "switch"
-            var season = Season.Autumn;
+            ////Now we'll use Season enum here to play with "switch"
+            //var season = Season.Autumn;
 
-            switch (season)
-            {
-                case Season.Autumn:
-                    Console.WriteLine("It's a beautiful Season: Autumn");
-                    break;
+            //switch (season)
+            //{
+            //    case Season.Autumn:
+            //        Console.WriteLine("It's a beautiful Season: Autumn");
+            //        break;
 
-                case Season.Summer:
-                    Console.WriteLine("U ready to carnival and get a nice color?");
-                    break;
+            //    case Season.Summer:
+            //        Console.WriteLine("U ready to carnival and get a nice color?");
+            //        break;
 
-                case Season.Winter:
-                case Season.Spring:
-                    Console.WriteLine("You can also use two options to return the same value!");
-                    break;
+            //    case Season.Winter:
+            //    case Season.Spring:
+            //        Console.WriteLine("You can also use two options to return the same value!");
+            //        break;
 
-                default:
-                    Console.WriteLine("I don't understand the reason");
-                    break;
+            //    default:
+            //        Console.WriteLine("I don't understand the reason");
+            //        break;
 
-            }
+            //}
 
-            //Doing the exercises now
+            ////Doing the exercises now
 
-            //Makes the user writes a valid number between 1 and 10, if the user writes an invalid number, it will show an error message
-            Console.WriteLine("Please enter a number between 1 and 10:");
-            string userInput = Console.ReadLine();
-            if (int.TryParse(userInput, out int validInputNumber) && validInputNumber >= 1 && validInputNumber <= 10)
-            {
-                Console.WriteLine("Thank you for entering a valid number: " + validInputNumber);
-            }
-            else
-            {
-                Console.WriteLine("Invalid input. Please enter a number between 1 and 10.");
-            }
+            ////Makes the user writes a valid number between 1 and 10, if the user writes an invalid number, it will show an error message
+            //Console.WriteLine("Please enter a number between 1 and 10:");
+            //string userInput = Console.ReadLine();
+            //if (int.TryParse(userInput, out int validInputNumber) && validInputNumber >= 1 && validInputNumber <= 10)
+            //{
+            //    Console.WriteLine("Thank you for entering a valid number: " + validInputNumber);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Invalid input. Please enter a number between 1 and 10.");
+            //}
 
-            //Takes two numbers from the user and shows the result of addition:
-            Console.WriteLine("Please enter the first number:");
-            string firstInput = Console.ReadLine();
-            int convertedFirstInput = Convert.ToInt32(firstInput);
-            Console.WriteLine("Please enter the second number:");
-            string secondInput = Console.ReadLine();
-            int convertedSecondInput = Convert.ToInt32(secondInput);
-            Console.WriteLine("The sum is: " + (convertedFirstInput + convertedSecondInput));
+            ////Takes two numbers from the user and shows the result of addition:
+            //Console.WriteLine("Please enter the first number:");
+            //string firstInput = Console.ReadLine();
+            //int convertedFirstInput = Convert.ToInt32(firstInput);
+            //Console.WriteLine("Please enter the second number:");
+            //string secondInput = Console.ReadLine();
+            //int convertedSecondInput = Convert.ToInt32(secondInput);
+            //Console.WriteLine("The sum is: " + (convertedFirstInput + convertedSecondInput));
 
-            //Ask the user to enter the width and height of an image. Then tell if the image is a landscape or portrait
+            ////Ask the user to enter the width and height of an image. Then tell if the image is a landscape or portrait
 
-            Console.WriteLine("To tell if the image is a landscape or portrait, Please, enter the width:");
-            string userWidthInput = Console.ReadLine();
-            int convertedWidth = Convert.ToInt32(userWidthInput);
-            Console.WriteLine("Now, inserte the height:");
-            string userHeightInput = Console.ReadLine();
-            int convertedHeight = Convert.ToInt32(userHeightInput);
+            //Console.WriteLine("To tell if the image is a landscape or portrait, Please, enter the width:");
+            //string userWidthInput = Console.ReadLine();
+            //int convertedWidth = Convert.ToInt32(userWidthInput);
+            //Console.WriteLine("Now, inserte the height:");
+            //string userHeightInput = Console.ReadLine();
+            //int convertedHeight = Convert.ToInt32(userHeightInput);
 
-            if (convertedWidth > convertedHeight)
-            {
-                Console.WriteLine("The image is a landscape");
+            //if (convertedWidth > convertedHeight)
+            //{
+            //    Console.WriteLine("The image is a landscape");
 
-            }
-            else if (convertedWidth < convertedHeight)
-            {
-                Console.WriteLine("The image is a portrait");
-            }
-            else
-            { Console.WriteLine("This is a square image. Not a landscape neither a portrait.");
-            }
+            //}
+            //else if (convertedWidth < convertedHeight)
+            //{
+            //    Console.WriteLine("The image is a portrait");
+            //}
+            //else
+            //{ Console.WriteLine("This is a square image. Not a landscape neither a portrait.");
+            //}
 
-            //Your job is to write a program for a speed camera. For simplicity, ignore the details such as camera, sensors, etc and focus purely on the logic.
-            //Write a program that asks the user to enter the speed limit. Once set, the program asks for the speed of a car.
-            //If the user enters a value less than the speed limit, program should display Ok on the console.
-            //If the value is above the speed limit, the program should calculate the number of demerit points.
-            //For every 5km/hr above the speed limit, 1 demerit points should be incurred and displayed on the console.
-            //If the number of demerit points is above 12, the program should display License Suspended.
+            ////Your job is to write a program for a speed camera. For simplicity, ignore the details such as camera, sensors, etc and focus purely on the logic.
+            ////Write a program that asks the user to enter the speed limit. Once set, the program asks for the speed of a car.
+            ////If the user enters a value less than the speed limit, program should display Ok on the console.
+            ////If the value is above the speed limit, the program should calculate the number of demerit points.
+            ////For every 5km/hr above the speed limit, 1 demerit points should be incurred and displayed on the console.
+            ////If the number of demerit points is above 12, the program should display License Suspended.
 
-            Console.WriteLine("Please, enter the speed limit in this range of the road:");
-            int speedLimit = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("The speed limit is " + speedLimit + "kilometers per hour. Ok, now please insert the speed of the car:");
-            int carSpeed = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Please, enter the speed limit in this range of the road:");
+            //int speedLimit = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("The speed limit is " + speedLimit + "kilometers per hour. Ok, now please insert the speed of the car:");
+            //int carSpeed = Convert.ToInt32(Console.ReadLine());
 
-            if (carSpeed <= speedLimit)
-            {
-                Console.WriteLine("Ok");
-            }
-            else
-            {
-                int excessSpeed = carSpeed - speedLimit;
-                int demeritPoints = excessSpeed / 5;
+            //if (carSpeed <= speedLimit)
+            //{
+            //    Console.WriteLine("Ok");
+            //}
+            //else
+            //{
+            //    int excessSpeed = carSpeed - speedLimit;
+            //    int demeritPoints = excessSpeed / 5;
 
-                Console.WriteLine("Demerit points: " + demeritPoints);
+            //    Console.WriteLine("Demerit points: " + demeritPoints);
 
-                if (demeritPoints >=12)
+            //    if (demeritPoints >=12)
+            //        {
+            //        Console.WriteLine("Perdeu playboy, passa a carteira");
+            //        }
+            //}
+
+            //Now let's play with loops
+
+            for (var i = 1; i <= 10; i++)
+                if(i%2 == 0)
                     {
-                    Console.WriteLine("Perdeu playboy, passa a carteira");
+                    Console.WriteLine(i);
                     }
-            }
-           
 
+            for (var y = 10; y >= 1; y--)
+                if (y % 2 == 0)
+                {
+                    Console.WriteLine(y);
+                }
+
+            //foreach is easier to understand, see:
+
+            var name = "Brené Brown";
+
+            for (var b = 0; b < name.Length; b++)
+            {
+                Console.WriteLine(name[b]);
+            }
+
+            //now with foreach ;)
+            foreach (var character in name)
+            {
+                Console.WriteLine(character);
+            }
+
+            var numbers = new int[] { 1, 2, 3, 4, };
+
+            foreach (var number  in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
+            //while
+            var w = 0;
+            while (w <= 10)
+            {
+                if (w  % 2 == 0) //there's no {} here
+                
+                    Console.WriteLine(w);
+                    w++;
+                
+            }
+
+            //equal program:
+
+            while (true)
+            {
+                Console.Write("Type your name: "); //uses Write so the cursor appear in the same line ;)
+                var nameInput = Console.ReadLine();
+
+                if (String.IsNullOrWhiteSpace(nameInput)) //don't use ';' here or you're finishing the if statement
+                break;
+
+                Console.WriteLine("@Echo: " + nameInput);
+            }
+
+            while (true)
+            {
+                Console.Write("Type your name2: "); //uses Write so the cursor appear in the same line ;)
+                var nameInput2 = Console.ReadLine();
+
+                if (!String.IsNullOrWhiteSpace(nameInput2))
+                {
+                    Console.WriteLine("@Echo: " + nameInput2);
+                    continue; //use continue instead of break because you're negating the if statement now.
+                }
+
+                break;
+
+                
+            }
 
         }
     }
