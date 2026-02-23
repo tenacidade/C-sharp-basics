@@ -142,10 +142,10 @@ namespace C_sharp_basics
             //Now let's play with loops
 
             for (var i = 1; i <= 10; i++)
-                if(i%2 == 0)
-                    {
+                if (i % 2 == 0)
+                {
                     Console.WriteLine(i);
-                    }
+                }
 
             for (var y = 10; y >= 1; y--)
                 if (y % 2 == 0)
@@ -170,7 +170,7 @@ namespace C_sharp_basics
 
             var numbers = new int[] { 1, 2, 3, 4, };
 
-            foreach (var number  in numbers)
+            foreach (var number in numbers)
             {
                 Console.WriteLine(number);
             }
@@ -179,11 +179,11 @@ namespace C_sharp_basics
             var w = 0;
             while (w <= 10)
             {
-                if (w  % 2 == 0) //there's no {} here
-                
+                if (w % 2 == 0) //there's no {} here
+
                     Console.WriteLine(w);
-                    w++;
-                
+                w++;
+
             }
 
             //equal program:
@@ -194,7 +194,7 @@ namespace C_sharp_basics
                 var nameInput = Console.ReadLine();
 
                 if (String.IsNullOrWhiteSpace(nameInput)) //don't use ';' here or you're finishing the if statement
-                break;
+                    break;
 
                 Console.WriteLine("@Echo: " + nameInput);
             }
@@ -212,9 +212,51 @@ namespace C_sharp_basics
 
                 break;
 
-                
+
             }
 
+            //exercises :)
+
+            //Write a program to count how many numbers between 1 and 100 are divisible by 3 with no remainder. Display the count on the console.
+            var nmbr = 1;
+            var count = 0;
+            while (nmbr <= 100)
+            {
+                if (nmbr % 3 == 0)
+                    count++;
+                nmbr++;
+            }
+            Console.WriteLine(count);
+
+            //Write a program and continuously ask the user to enter a number or "ok" to exit.
+            //Calculate the sum of all the previously entered numbers and display it on the console.
+
+
+            Console.WriteLine("Enter a number or write 'ok' to exit. All numbers typed will be summed and displayed in the console when you enter 'ok'");
+
+            var sum = 0;
+
+            while (true)
+            {
+                var userInput = Console.ReadLine();
+
+                if (userInput.ToLower() == "ok")
+                {
+                    break;
+                }
+
+                int number;
+                
+                if (int.TryParse(userInput, out number)) 
+                    //try to convert the user input to a number, if it works, add it to the sum, if not, show an error message
+                {
+                    sum += number; //equals to sum = sum + number
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number or 'ok' to exit.");
+                }
+            }
+            Console.WriteLine("The sum of the values is " + sum);
         }
-    }
-}
+    } }
