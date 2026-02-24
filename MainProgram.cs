@@ -246,9 +246,9 @@ namespace C_sharp_basics
                 }
 
                 int number;
-                
-                if (int.TryParse(userInput, out number)) 
-                    //try to convert the user input to a number, if it works, add it to the sum, if not, show an error message
+
+                if (int.TryParse(userInput, out number))
+                //try to convert the user input to a number, if it works, add it to the sum, if not, show an error message
                 {
                     sum += number; //equals to sum = sum + number
                 }
@@ -258,5 +258,98 @@ namespace C_sharp_basics
                 }
             }
             Console.WriteLine("The sum of the values is " + sum);
+
+            //Write a program and ask the user to enter a number.
+            //Compute the factorial of the number and print it on the console.
+            //For example, if the user enters 5, the program should calculate 5 x 4 x 3 x 2 x 1 and display it as 5! = 120.
+
+            Console.WriteLine("Enter a number. I'll compute the factorial of this number to you ;)");
+            var input = Console.ReadLine();
+
+            if (int.TryParse(input, out int factorialNumber) && factorialNumber >= 0)
+            {
+                int factorial = 1;
+                for (int i = 1; i <= factorialNumber; i++)
+                {
+                    factorial *= i; //equals to factorial = factorial * i
+                }
+                Console.WriteLine(factorialNumber + "! = " + factorial);
+                //break;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a non-negative integer.");
+            }
+
+            //Write a program that picks a random number between 1 and 10. Give the user 4 chances to guess the number.
+            //If the user guesses the number, display “You won"; otherwise, display “You lost".
+            //(To make sure the program is behaving correctly, you can display the secret number on the console first.)
+
+            var random = new Random();
+            int secretNumber = random.Next(1, 11); //generates a random number between 1 and 10
+            Console.WriteLine("The secret number is: " + secretNumber); //display the secret number for testing purposes
+
+            int attempts = 4;
+            bool isGuessed = false;
+
+            while (attempts > 0)
+            {
+                Console.WriteLine("Guess the number (between 1 and 10):");
+                var guessInput = Console.ReadLine();
+
+                if (int.TryParse(guessInput, out int guessedNumber) && guessedNumber >= 1 && guessedNumber <= 10)
+                {
+                    if (guessedNumber == secretNumber)
+                    {
+                        Console.WriteLine("You won!");
+                        isGuessed = true;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong guess. Try again.");
+                        attempts--;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a number between 1 and 10.");
+                }
+            }
+
+            if (!isGuessed)
+            {
+                Console.WriteLine("You lost! The secret number was: " + secretNumber);
+            }
+
+            //Write a program and ask the user to enter a series of numbers separated by comma.
+            //Find the maximum of the numbers and display it on the console.
+            //For example, if the user enters “5, 3, 8, 1, 4", the program should display 8.
+
+            Console.WriteLine("Enter a series of numbers separated by comma:");
+
+            if (int.TryParse(Console.ReadLine(), out int numbersInput))
+            {
+                string[] numberStrings = Console.ReadLine().Split(','); //split the input string into an array of strings using comma as a separator
+                int maxNumber = int.MinValue; //initialize maxNumber to the smallest possible integer value
+                foreach (var numberString in numberStrings)
+                {
+                    if (int.TryParse(numberString.Trim(), out int number)) //try to convert each string to an integer, trimming any whitespace
+                    {
+                        if (number > maxNumber) //if the current number is greater than maxNumber, update maxNumber
+                        {
+                            maxNumber = number;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input: " + numberString + " is not a valid number.");
+                    }
+                }
+                Console.WriteLine("The maximum number is: " + maxNumber);
+
+
+            }
         }
-    } }
+    }
+}
