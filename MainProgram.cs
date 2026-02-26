@@ -328,28 +328,35 @@ namespace C_sharp_basics
 
             Console.WriteLine("Enter a series of numbers separated by comma:");
 
-            if (int.TryParse(Console.ReadLine(), out int numbersInput))
+            var numbersInput = Console.ReadLine();
+            //Receiving the whole user input as a string
+
+            string[] numberStrings = numbersInput.Split(',');
+
+            //string[] numberStrings = Console.ReadLine().Split(',');
+            //Receiving the user input and breaking it into an array of strings using comma as a separator
+
+
+            int maxNumber = int.MinValue;
+
+            foreach (var numberString in numberStrings)
             {
-                string[] numberStrings = Console.ReadLine().Split(','); //split the input string into an array of strings using comma as a separator
-                int maxNumber = int.MinValue; //initialize maxNumber to the smallest possible integer value
-                foreach (var numberString in numberStrings)
+                if (int.TryParse(numberString.Trim(), out int number)) //Converting each piece into a number and trimming any whitespace
                 {
-                    if (int.TryParse(numberString.Trim(), out int number)) //try to convert each string to an integer, trimming any whitespace
+                    if (number > maxNumber) //if the current number is greater than maxNumber, update maxNumber
                     {
-                        if (number > maxNumber) //if the current number is greater than maxNumber, update maxNumber
-                        {
-                            maxNumber = number;
-                        }
+                        maxNumber = number;
                     }
-                    else
-                    {
-                        Console.WriteLine("Invalid input: " + numberString + " is not a valid number.");
-                    }
+                    //if statements to keep track of the maximum values among the numbers entered by the user
                 }
-                Console.WriteLine("The maximum number is: " + maxNumber);
-
-
+                else
+                {
+                    Console.WriteLine("Invalid input: " + numberString + " is not a valid number.");
+                }
             }
+            Console.WriteLine("The max number between the numbers you typed is: " + maxNumber);
+            
+           
         }
     }
 }
