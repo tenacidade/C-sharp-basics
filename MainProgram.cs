@@ -139,224 +139,254 @@ namespace C_sharp_basics
             //        }
             //}
 
-            //Now let's play with loops
+            ////Now let's play with loops
 
-            for (var i = 1; i <= 10; i++)
-                if (i % 2 == 0)
-                {
-                    Console.WriteLine(i);
-                }
+            //for (var i = 1; i <= 10; i++)
+            //    if (i % 2 == 0)
+            //    {
+            //        Console.WriteLine(i);
+            //    }
 
-            for (var y = 10; y >= 1; y--)
-                if (y % 2 == 0)
-                {
-                    Console.WriteLine(y);
-                }
+            //for (var y = 10; y >= 1; y--)
+            //    if (y % 2 == 0)
+            //    {
+            //        Console.WriteLine(y);
+            //    }
 
-            //foreach is easier to understand, see:
+            ////foreach is easier to understand, see:
 
-            var name = "Brené Brown";
+            //var name = "Brené Brown";
 
-            for (var b = 0; b < name.Length; b++)
-            {
-                Console.WriteLine(name[b]);
-            }
+            //for (var b = 0; b < name.Length; b++)
+            //{
+            //    Console.WriteLine(name[b]);
+            //}
 
-            //now with foreach ;)
-            foreach (var character in name)
-            {
-                Console.WriteLine(character);
-            }
+            ////now with foreach ;)
+            //foreach (var character in name)
+            //{
+            //    Console.WriteLine(character);
+            //}
 
-            var numbers = new int[] { 1, 2, 3, 4, };
+            //var numbers = new int[] { 1, 2, 3, 4, };
 
-            foreach (var number in numbers)
-            {
-                Console.WriteLine(number);
-            }
+            //foreach (var number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
 
-            //while
-            var w = 0;
-            while (w <= 10)
-            {
-                if (w % 2 == 0) //there's no {} here
+            ////while
+            //var w = 0;
+            //while (w <= 10)
+            //{
+            //    if (w % 2 == 0) //there's no {} here
 
-                    Console.WriteLine(w);
-                w++;
+            //        Console.WriteLine(w);
+            //    w++;
 
-            }
+            //}
 
-            //equal program:
+            ////equal program:
 
-            while (true)
-            {
-                Console.Write("Type your name: "); //uses Write so the cursor appear in the same line ;)
-                var nameInput = Console.ReadLine();
+            //while (true)
+            //{
+            //    Console.Write("Type your name: "); //uses Write so the cursor appear in the same line ;)
+            //    var nameInput = Console.ReadLine();
 
-                if (String.IsNullOrWhiteSpace(nameInput)) //don't use ';' here or you're finishing the if statement
-                    break;
+            //    if (String.IsNullOrWhiteSpace(nameInput)) //don't use ';' here or you're finishing the if statement
+            //        break;
 
-                Console.WriteLine("@Echo: " + nameInput);
-            }
+            //    Console.WriteLine("@Echo: " + nameInput);
+            //}
 
-            while (true)
-            {
-                Console.Write("Type your name2: "); //uses Write so the cursor appear in the same line ;)
-                var nameInput2 = Console.ReadLine();
+            //while (true)
+            //{
+            //    Console.Write("Type your name2: "); //uses Write so the cursor appear in the same line ;)
+            //    var nameInput2 = Console.ReadLine();
 
-                if (!String.IsNullOrWhiteSpace(nameInput2))
-                {
-                    Console.WriteLine("@Echo: " + nameInput2);
-                    continue; //use continue instead of break because you're negating the if statement now.
-                }
+            //    if (!String.IsNullOrWhiteSpace(nameInput2))
+            //    {
+            //        Console.WriteLine("@Echo: " + nameInput2);
+            //        continue; //use continue instead of break because you're negating the if statement now.
+            //    }
 
-                break;
-
-
-            }
-
-            //exercises :)
-
-            //Write a program to count how many numbers between 1 and 100 are divisible by 3 with no remainder. Display the count on the console.
-            var nmbr = 1;
-            var count = 0;
-            while (nmbr <= 100)
-            {
-                if (nmbr % 3 == 0)
-                    count++;
-                nmbr++;
-            }
-            Console.WriteLine(count);
-
-            //Write a program and continuously ask the user to enter a number or "ok" to exit.
-            //Calculate the sum of all the previously entered numbers and display it on the console.
+            //    break;
 
 
-            Console.WriteLine("Enter a number or write 'ok' to exit. All numbers typed will be summed and displayed in the console when you enter 'ok'");
+            //}
 
-            var sum = 0;
+            ////exercises :)
 
-            while (true)
-            {
-                var userInput = Console.ReadLine();
+            ////Write a program to count how many numbers between 1 and 100 are divisible by 3 with no remainder. Display the count on the console.
+            //var nmbr = 1;
+            //var count = 0;
+            //while (nmbr <= 100)
+            //{
+            //    if (nmbr % 3 == 0)
+            //        count++;
+            //    nmbr++;
+            //}
+            //Console.WriteLine(count);
 
-                if (userInput.ToLower() == "ok")
-                {
-                    break;
-                }
-
-                int number;
-
-                if (int.TryParse(userInput, out number))
-                //try to convert the user input to a number, if it works, add it to the sum, if not, show an error message
-                {
-                    sum += number; //equals to sum = sum + number
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input. Please enter a valid number or 'ok' to exit.");
-                }
-            }
-            Console.WriteLine("The sum of the values is " + sum);
-
-            //Write a program and ask the user to enter a number.
-            //Compute the factorial of the number and print it on the console.
-            //For example, if the user enters 5, the program should calculate 5 x 4 x 3 x 2 x 1 and display it as 5! = 120.
-
-            Console.WriteLine("Enter a number. I'll compute the factorial of this number to you ;)");
-            var input = Console.ReadLine();
-
-            if (int.TryParse(input, out int factorialNumber) && factorialNumber >= 0)
-            {
-                int factorial = 1;
-                for (int i = 1; i <= factorialNumber; i++)
-                {
-                    factorial *= i; //equals to factorial = factorial * i
-                }
-                Console.WriteLine(factorialNumber + "! = " + factorial);
-                //break;
-            }
-            else
-            {
-                Console.WriteLine("Invalid input. Please enter a non-negative integer.");
-            }
-
-            //Write a program that picks a random number between 1 and 10. Give the user 4 chances to guess the number.
-            //If the user guesses the number, display “You won"; otherwise, display “You lost".
-            //(To make sure the program is behaving correctly, you can display the secret number on the console first.)
-
-            var random = new Random();
-            int secretNumber = random.Next(1, 11); //generates a random number between 1 and 10
-            Console.WriteLine("The secret number is: " + secretNumber); //display the secret number for testing purposes
-
-            int attempts = 4;
-            bool isGuessed = false;
-
-            while (attempts > 0)
-            {
-                Console.WriteLine("Guess the number (between 1 and 10):");
-                var guessInput = Console.ReadLine();
-
-                if (int.TryParse(guessInput, out int guessedNumber) && guessedNumber >= 1 && guessedNumber <= 10)
-                {
-                    if (guessedNumber == secretNumber)
-                    {
-                        Console.WriteLine("You won!");
-                        isGuessed = true;
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Wrong guess. Try again.");
-                        attempts--;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input. Please enter a number between 1 and 10.");
-                }
-            }
-
-            if (!isGuessed)
-            {
-                Console.WriteLine("You lost! The secret number was: " + secretNumber);
-            }
-
-            //Write a program and ask the user to enter a series of numbers separated by comma.
-            //Find the maximum of the numbers and display it on the console.
-            //For example, if the user enters “5, 3, 8, 1, 4", the program should display 8.
-
-            Console.WriteLine("Enter a series of numbers separated by comma:");
-
-            var numbersInput = Console.ReadLine();
-            //Receiving the whole user input as a string
-
-            string[] numberStrings = numbersInput.Split(',');
-
-            //string[] numberStrings = Console.ReadLine().Split(',');
-            //Receiving the user input and breaking it into an array of strings using comma as a separator
+            ////Write a program and continuously ask the user to enter a number or "ok" to exit.
+            ////Calculate the sum of all the previously entered numbers and display it on the console.
 
 
-            int maxNumber = int.MinValue;
+            //Console.WriteLine("Enter a number or write 'ok' to exit. All numbers typed will be summed and displayed in the console when you enter 'ok'");
 
-            foreach (var numberString in numberStrings)
-            {
-                if (int.TryParse(numberString.Trim(), out int number)) //Converting each piece into a number and trimming any whitespace
-                {
-                    if (number > maxNumber) //if the current number is greater than maxNumber, update maxNumber
-                    {
-                        maxNumber = number;
-                    }
-                    //if statements to keep track of the maximum values among the numbers entered by the user
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input: " + numberString + " is not a valid number.");
-                }
-            }
-            Console.WriteLine("The max number between the numbers you typed is: " + maxNumber);
+            //var sum = 0;
+
+            //while (true)
+            //{
+            //    var userInput = Console.ReadLine();
+
+            //    if (userInput.ToLower() == "ok")
+            //    {
+            //        break;
+            //    }
+
+            //    int number;
+
+            //    if (int.TryParse(userInput, out number))
+            //    //try to convert the user input to a number, if it works, add it to the sum, if not, show an error message
+            //    {
+            //        sum += number; //equals to sum = sum + number
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Invalid input. Please enter a valid number or 'ok' to exit.");
+            //    }
+            //}
+            //Console.WriteLine("The sum of the values is " + sum);
+
+            ////Write a program and ask the user to enter a number.
+            ////Compute the factorial of the number and print it on the console.
+            ////For example, if the user enters 5, the program should calculate 5 x 4 x 3 x 2 x 1 and display it as 5! = 120.
+
+            //Console.WriteLine("Enter a number. I'll compute the factorial of this number to you ;)");
+            //var input = Console.ReadLine();
+
+            //if (int.TryParse(input, out int factorialNumber) && factorialNumber >= 0)
+            //{
+            //    int factorial = 1;
+            //    for (int i = 1; i <= factorialNumber; i++)
+            //    {
+            //        factorial *= i; //equals to factorial = factorial * i
+            //    }
+            //    Console.WriteLine(factorialNumber + "! = " + factorial);
+            //    //break;
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Invalid input. Please enter a non-negative integer.");
+            //}
+
+            ////Write a program that picks a random number between 1 and 10. Give the user 4 chances to guess the number.
+            ////If the user guesses the number, display “You won"; otherwise, display “You lost".
+            ////(To make sure the program is behaving correctly, you can display the secret number on the console first.)
+
+            //var random = new Random();
+            //int secretNumber = random.Next(1, 11); //generates a random number between 1 and 10
+            //Console.WriteLine("The secret number is: " + secretNumber); //display the secret number for testing purposes
+
+            //int attempts = 4;
+            //bool isGuessed = false;
+
+            //while (attempts > 0)
+            //{
+            //    Console.WriteLine("Guess the number (between 1 and 10):");
+            //    var guessInput = Console.ReadLine();
+
+            //    if (int.TryParse(guessInput, out int guessedNumber) && guessedNumber >= 1 && guessedNumber <= 10)
+            //    {
+            //        if (guessedNumber == secretNumber)
+            //        {
+            //            Console.WriteLine("You won!");
+            //            isGuessed = true;
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Wrong guess. Try again.");
+            //            attempts--;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Invalid input. Please enter a number between 1 and 10.");
+            //    }
+            //}
+
+            //if (!isGuessed)
+            //{
+            //    Console.WriteLine("You lost! The secret number was: " + secretNumber);
+            //}
+
+            ////Write a program and ask the user to enter a series of numbers separated by comma.
+            ////Find the maximum of the numbers and display it on the console.
+            ////For example, if the user enters “5, 3, 8, 1, 4", the program should display 8.
+
+            //Console.WriteLine("Enter a series of numbers separated by comma:");
+
+            //var numbersInput = Console.ReadLine();
+            ////Receiving the whole user input as a string
+
+            //string[] numberStrings = numbersInput.Split(',');
+
+            ////string[] numberStrings = Console.ReadLine().Split(',');
+            ////Receiving the user input and breaking it into an array of strings using comma as a separator
+
+
+            //int maxNumber = int.MinValue;
+
+            //foreach (var numberString in numberStrings)
+            //{
+            //    if (int.TryParse(numberString.Trim(), out int number)) //Converting each piece into a number and trimming any whitespace
+            //    {
+            //        if (number > maxNumber) //if the current number is greater than maxNumber, update maxNumber
+            //        {
+            //            maxNumber = number;
+            //        }
+            //        //if statements to keep track of the maximum values among the numbers entered by the user
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Invalid input: " + numberString + " is not a valid number.");
+            //    }
+            //}
+            //Console.WriteLine("The max number between the numbers you typed is: " + maxNumber);
             
-           
+
+            //Now, into arrays :)
+
+            var numbers = new int[5] {7, 30, 14, 2, 59}; //declaring an array of integers with a size of 5
+            Console.WriteLine("Lenght: " + numbers.Length); //Lenght
+
+            var index = Array.IndexOf(numbers, 14); //returns the index of the first occurrence of the value 14 in the array, which is 2 (since arrays are zero-indexed)
+            Console.WriteLine("Index of 3: " + index);
+
+            Array.Clear(numbers, 0, 2); //clears numbers from index 0 to index 1 (2 elements)
+            Console.WriteLine("Effect of Clear(): ");
+            foreach (var n in numbers)
+                Console.WriteLine(n);
+
+            var anotherArray = new int[3];
+
+            Array.Copy(numbers, anotherArray, 3); //copies the first 3 elements of the numbers array to the anotherArray
+            Console.WriteLine("Effect of Copy()");
+            foreach (var n in anotherArray) 
+                Console.WriteLine(n);
+
+            Array.Sort(numbers); //sorts the numbers array in ascending order
+            Console.WriteLine("Effect of Sort()");
+            foreach (var n in numbers)
+                Console.WriteLine(n);
+
+            Array.Reverse(numbers); //reverses the order of the elements in the numbers array
+            Console.WriteLine("Effect of Reverse()");
+            foreach (var n in numbers)
+                Console.WriteLine(n);
+
         }
     }
 }
